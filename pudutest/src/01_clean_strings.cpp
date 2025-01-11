@@ -1,5 +1,5 @@
 #include "00_main.h"
-#include "cpp11janitor.hpp"
+#include "pudu.hpp"
 
 [[cpp11::register]] cpp11::writable::strings test_tidy_r_names(const cpp11::strings& x) {
   cpp11::writable::strings res = tidy_r_names(x);

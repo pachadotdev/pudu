@@ -1,4 +1,4 @@
-Package: cpp11janitor
+Package: pudu
 Type: Package
 Title: C++ Tools for Cleaning Strings
 Description: Provides function declarations and inline function definitions that
@@ -24,10 +24,10 @@ Suggests:
     withr
 Depends: R(>= 3.5.0)
 License: Apache License (>= 2)
-BugReports: https://github.com/pachadotdev/cpp11janitor/issues
-URL: https://pacha.dev/cpp11janitor/,
-     https://github.com/pachadotdev/cpp11janitor
+BugReports: https://github.com/pachadotdev/pudu/issues
+URL: https://pacha.dev/pudu/,
+     https://github.com/pachadotdev/pudu
 LazyData: true
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Encoding: UTF-8
 Config/testthat/edition: 3

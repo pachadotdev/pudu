@@ -9,7 +9,7 @@
 ^LICENSE\.md$
 ^README\.Rmd$
 ^README\.html$
-^cpp11janitortest$
+^pudutest$
 ^pkgdown$
 ^Makefile$
 ^\.clang-format$

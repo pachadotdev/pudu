@@ -24,7 +24,7 @@ jobs:
           - {os: windows-latest, r: 'release'}
           - {os: ubuntu-latest,   r: 'devel', http-user-agent: 'release'}
           - {os: ubuntu-latest,   r: 'release'}
-          - {os: ubuntu-latest,   r: 'release', custom: 'no-cpp11janitortest'}
+          - {os: ubuntu-latest,   r: 'release', custom: 'no-pudutest'}
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -46,13 +46,13 @@ jobs:
           extra-packages: any::rcmdcheck
           needs: check
 
-      - name: Install cpp11janitortest
-        if: matrix.config.custom != 'no-cpp11janitortest'
+      - name: Install pudutest
+        if: matrix.config.custom != 'no-pudutest'
         run: |
           options(warn = 2)
-          pak::local_install_dev_deps("cpp11janitortest", dependencies = TRUE)
+          pak::local_install_dev_deps("pudutest", dependencies = TRUE)
           install.packages(".", repos = NULL, type = "source")
-          install.packages("cpp11janitortest", repos = NULL, INSTALL_opts = "--install-tests", type = "source")
+          install.packages("pudutest", repos = NULL, INSTALL_opts = "--install-tests", type = "source")
         shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2
@@ -60,11 +60,11 @@ jobs:
           upload-snapshots: true
           build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
 
-      - name: Run cpp11janitortest tests
-        if: matrix.config.custom != 'no-cpp11janitortest'
+      - name: Run pudutest tests
+        if: matrix.config.custom != 'no-pudutest'
         run: |
-          setwd("cpp11janitortest/tests")
+          setwd("pudutest/tests")
           library(testthat)
-          library(cpp11janitortest)
-          test_check("cpp11janitortest", reporter = "progress")
+          library(pudutest)
+          test_check("pudutest", reporter = "progress")
         shell: Rscript {0}

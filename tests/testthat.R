@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(cpp11janitor)
+library(pudu)
 
-test_check("cpp11janitor")
+test_check("pudu")

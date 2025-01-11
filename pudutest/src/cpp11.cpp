@@ -7,14 +7,14 @@
 
 // 01_clean_strings.cpp
 cpp11::writable::strings test_tidy_r_names(const cpp11::strings& x);
-extern "C" SEXP _cpp11janitortest_test_tidy_r_names(SEXP x) {
+extern "C" SEXP _pudutest_test_tidy_r_names(SEXP x) {
   BEGIN_CPP11
     return cpp11::as_sexp(test_tidy_r_names(cpp11::as_cpp<cpp11::decay_t<const cpp11::strings&>>(x)));
   END_CPP11
 }
 // 01_clean_strings.cpp
 cpp11::writable::strings test_tidy_r_vars(const cpp11::strings& x);
-extern "C" SEXP _cpp11janitortest_test_tidy_r_vars(SEXP x) {
+extern "C" SEXP _pudutest_test_tidy_r_vars(SEXP x) {
   BEGIN_CPP11
     return cpp11::as_sexp(test_tidy_r_vars(cpp11::as_cpp<cpp11::decay_t<const cpp11::strings&>>(x)));
   END_CPP11
@@ -22,13 +22,13 @@ extern "C" SEXP _cpp11janitortest_test_tidy_r_vars(SEXP x) {
 
 extern "C" {
 static const R_CallMethodDef CallEntries[] = {
-    {"_cpp11janitortest_test_tidy_r_names", (DL_FUNC) &_cpp11janitortest_test_tidy_r_names, 1},
-    {"_cpp11janitortest_test_tidy_r_vars",  (DL_FUNC) &_cpp11janitortest_test_tidy_r_vars,  1},
+    {"_pudutest_test_tidy_r_names", (DL_FUNC) &_pudutest_test_tidy_r_names, 1},
+    {"_pudutest_test_tidy_r_vars",  (DL_FUNC) &_pudutest_test_tidy_r_vars,  1},
     {NULL, NULL, 0}
 };
 }
 
-extern "C" attribute_visible void R_init_cpp11janitortest(DllInfo* dll){
+extern "C" attribute_visible void R_init_pudutest(DllInfo* dll){
   R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
   R_useDynamicSymbols(dll, FALSE);
   R_forceSymbols(dll, TRUE);

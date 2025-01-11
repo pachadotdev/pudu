@@ -2,7 +2,7 @@
 % Please edit documentation in R/vendor.R
 \name{cpp_vendor}
 \alias{cpp_vendor}
-\title{Vendor the cpp11 and cpp11janitor dependency}
+\title{Vendor the cpp11 and pudu dependency}
 \usage{
 cpp_vendor(dir = NULL, subdir = "/inst/include")
 }
@@ -19,14 +19,14 @@ Vendoring is the act of making your own copy of the 3rd party packages your
 project is using. It is often used in the go language community.
 }
 \details{
-This function vendors cpp11 and cpp11janitor into your package by copying
-the cpp11 and cpp11janitor headers into the `inst/include` folder and
-adding 'cpp11 version: XYZ' and 'cpp11janitor version: XYZ' to the top of
-the files, where XYZ is the version of cpp11 and cpp11janitor currently
+This function vendors cpp11 and pudu into your package by copying
+the cpp11 and pudu headers into the `inst/include` folder and
+adding 'cpp11 version: XYZ' and 'pudu version: XYZ' to the top of
+the files, where XYZ is the version of cpp11 and pudu currently
 installed on your machine.
 
 Vendoring places the responsibility of updating the code on
-you. Bugfixes and new features in cpp11 and cpp11janitor will not be
+you. Bugfixes and new features in cpp11 and pudu will not be
 available for your code until you run `cpp_vendor()` again.
 }
 \examples{

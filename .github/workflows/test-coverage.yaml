@@ -26,12 +26,12 @@ jobs:
           extra-packages: any::covr
           needs: coverage
 
-      - name: Install cpp11janitortest
+      - name: Install pudutest
         run: |
           options(warn = 2)
-          pak::pkg_install("pachadotdev/cpp11janitor", dependencies = TRUE)
-          pak::local_install_dev_deps("cpp11janitortest", dependencies = TRUE)
-          install.packages("cpp11janitortest", repos = NULL, INSTALL_opts = "--install-tests", type = "source")
+          pak::pkg_install("pachadotdev/pudu", dependencies = TRUE)
+          pak::local_install_dev_deps("pudutest", dependencies = TRUE)
+          install.packages("pudutest", repos = NULL, INSTALL_opts = "--install-tests", type = "source")
         shell: Rscript {0}
 
       - name: Test coverage

@@ -1,34 +1,38 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# cpp11janitor <img src="man/figures/logo.svg" align="right" height="139" alt="" />
+# pudu <img src="man/figures/logo.svg" align="right" height="139" alt="" />
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/pachadotdev/cpp11janitor/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/pachadotdev/cpp11janitor/actions/workflows/R-CMD-check.yaml)
-[![codecov](https://codecov.io/gh/pachadotdev/cpp11janitor/graph/badge.svg?token=mWfiUCgfNu)](https://app.codecov.io/gh/pachadotdev/cpp11janitor)
+[![R-CMD-check](https://github.com/pachadotdev/pudu/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/pachadotdev/pudu/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/gh/pachadotdev/pudu/graph/badge.svg?token=mWfiUCgfNu)](https://app.codecov.io/gh/pachadotdev/pudu)
 [![BuyMeACoffee](https://raw.githubusercontent.com/pachadotdev/buymeacoffee-badges/main/bmc-donate-white.svg)](https://buymeacoffee.com/pacha)
 [![CRAN
-status](https://www.r-pkg.org/badges/version/cpp11janitor)](https://CRAN.R-project.org/package=cpp11janitor)
+status](https://www.r-pkg.org/badges/version/pudu)](https://CRAN.R-project.org/package=pudu)
 <!-- badges: end -->
 
 # Overview
 
-The goal of cpp11janitor is to provide function declarations and inline
-function definitions that facilitate cleaning strings in C++ code before
-passing them to R. It works with `cpp11::strings` and
-`std::vector<std::string>` objects.
+The goal of pudu is to provide function declarations and inline function
+definitions that facilitate cleaning strings in C++ code before passing
+them to R. It works with `cpp11::strings` and `std::vector<std::string>`
+objects.
 
 The idea is the same as the
 [janitor](https://cran.r-project.org/package=janitor) package, but for
 C++ code.
 
+Why is the name Pudu? Pudu is the smallest deer on planet Earth and this
+package is tiny too. The original Pudu (unvectorized) was drawn by
+[Pokanvas](https://www.deviantart.com/pokanvas/art/Baby-Pudu-944226115).
+
 # Installation
 
-You can install the development version of cpp11janitor with:
+You can install the development version of pudu with:
 
 ``` r
-remotes::install_github("pachadotdev/cpp11janitor")
+remotes::install_github("pachadotdev/pudu")
 ```
 
 # Example
@@ -37,7 +41,7 @@ Here is how you can use the functions in this package in C++ code:
 
 ``` cpp
 #include "00_main.h"
-#include "cpp11janitor.hpp"
+#include "pudu.hpp"
 
 // Example 1
 

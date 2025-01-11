@@ -1,16 +1,16 @@
-#' Vendor the cpp11 and cpp11janitor dependency
+#' Vendor the cpp11 and pudu dependency
 #'
 #' Vendoring is the act of making your own copy of the 3rd party packages your
 #' project is using. It is often used in the go language community.
 #'
-#' This function vendors cpp11 and cpp11janitor into your package by copying
-#' the cpp11 and cpp11janitor headers into the `inst/include` folder and
-#' adding 'cpp11 version: XYZ' and 'cpp11janitor version: XYZ' to the top of
-#' the files, where XYZ is the version of cpp11 and cpp11janitor currently
+#' This function vendors cpp11 and pudu into your package by copying
+#' the cpp11 and pudu headers into the `inst/include` folder and
+#' adding 'cpp11 version: XYZ' and 'pudu version: XYZ' to the top of
+#' the files, where XYZ is the version of cpp11 and pudu currently
 #' installed on your machine.
 #'
 #' Vendoring places the responsibility of updating the code on
-#' you. Bugfixes and new features in cpp11 and cpp11janitor will not be
+#' you. Bugfixes and new features in cpp11 and pudu will not be
 #' available for your code until you run `cpp_vendor()` again.
 #'
 #' @param dir The directory to vendor the code into.
@@ -72,7 +72,7 @@ cpp_vendor <- function(dir = NULL, subdir = "/inst/include") {
     path, "cpp11", cpp11_header
   )
 
-  # Vendor cpp11janitor ----
+  # Vendor pudu ----
 
   dir.create(
     file.path(path, "janitor"),
@@ -82,24 +82,24 @@ cpp_vendor <- function(dir = NULL, subdir = "/inst/include") {
 
   current_janitor <- system.file(
     "include",
-    "cpp11janitor.hpp",
-    package = "cpp11janitor"
+    "pudu.hpp",
+    package = "pudu"
   )
 
   if (!nzchar(current_janitor)) {
-    stop("cpp11janitor is not installed", call. = FALSE)
+    stop("pudu is not installed", call. = FALSE)
   }
 
-  janitor_version <- utils::packageVersion("cpp11janitor")
+  janitor_version <- utils::packageVersion("pudu")
 
   janitor_header <- sprintf(
-    "// cpp11janitor version: %s\n// vendored on: %s",
+    "// pudu version: %s\n// vendored on: %s",
     janitor_version,
     Sys.Date()
   )
 
   write_header(
-    path, "cpp11janitor.hpp", "cpp11janitor",
+    path, "pudu.hpp", "pudu",
     janitor_header
   )
 

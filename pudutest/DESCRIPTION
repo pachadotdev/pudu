@@ -1,6 +1,6 @@
-Package: cpp11janitortest
+Package: pudutest
 Type: Package
-Title: Testing cpp11janitor
+Title: Testing pudu
 Version: 0.1
 Authors@R: c(
     person(
@@ -15,16 +15,16 @@ Suggests:
     rmarkdown,
     testthat (>= 3.0.0)
 Depends: R(>= 3.5.0)
-Description: Testing cpp11janitor. I run this within a tiny package to test
+Description: Testing pudu. I run this within a tiny package to test
     the compiled code.
 License: Apache License (>= 2)
-BugReports: https://github.com/pachadotdev/cpp11janitor/issues
-URL: https://github.com/pachadotdev/cpp11janitor
-RoxygenNote: 7.3.1
+BugReports: https://github.com/pachadotdev/pudu/issues
+URL: https://github.com/pachadotdev/pudu
+RoxygenNote: 7.3.2
 Encoding: UTF-8
 NeedsCompilation: yes
-LinkingTo: cpp11, cpp11janitor
+LinkingTo: cpp11, pudu
 Config/testthat/edition: 3
 LazyData: true
 Remotes:
-    pachadotdev/cpp11janitor
+    pachadotdev/pudu

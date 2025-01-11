@@ -1,6 +1,6 @@
 test_that("return clean strings", {
-  # setwd("~/github/cpp11janitor/"); install()
-  # setwd("~/github/cpp11janitor/cpp11janitortest/"); cpp11::cpp_register(); clean_dll(); load_all()
+  # setwd("~/github/pudu/"); install()
+  # setwd("~/github/pudu/pudutest/"); cpp11::cpp_register(); clean_dll(); load_all()
 
   cols <- c("DEPTO_REF_ID", "CPV2011_REF_ID", "IDDEPTO", "DEPTO", "NDEPTO", "REDCODEN")
 
