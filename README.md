@@ -26,6 +26,9 @@ C++ code.
 Why is the name Pudu? Pudu is the smallest deer on planet Earth and this
 package is tiny too. The original Pudu (unvectorized) was drawn by
 [Pokanvas](https://www.deviantart.com/pokanvas/art/Baby-Pudu-944226115).
+This package emerged as a spinoff from the
+[redatam](https://github.com/pachadotdev/open-redatam) package while
+cleaning strings in C++ code.
 
 # Installation
 
@@ -40,21 +43,24 @@ remotes::install_github("pachadotdev/pudu")
 Here is how you can use the functions in this package in C++ code:
 
 ``` cpp
-#include "00_main.h"
-#include "pudu.hpp"
+#include <cpp11.hpp>
+#include <pudu.hpp>
+
+using namespace cpp11;
 
 // Example 1
 
 std::vector<std::string> x = {" REGION NAME "};
 
-tidy_std_names(x);
+tidy_std_names(x); // returns 'REGION NAME'
 
 // Example 2
 
-tidy_std_vars(x);
+tidy_std_vars(x); // returns 'region_name'
 
 // Example 3
 
+// test_tidy_r_names(" REGION NAME ") returns 'REGION NAME'
 [[cpp11::register]] cpp11::writable::strings test_tidy_r_names(
   const cpp11::strings& x) {
   cpp11::writable::strings res = tidy_r_names(x);
@@ -63,6 +69,7 @@ tidy_std_vars(x);
 
 // Example 4
 
+// test_tidy_r_names(" REGION NAME ") returns 'region_name'
 [[cpp11::register]] cpp11::writable::strings test_tidy_r_vars(
   const cpp11::strings& x) {
   cpp11::writable::strings res = tidy_r_vars(x);
@@ -70,15 +77,8 @@ tidy_std_vars(x);
 }
 ```
 
-From C++, the first two examples return “region\_name” and “REGION
-NAME”, respectively.
-
-From R, the last two examples return “region\_name” and “REGION\_NAME”
-when calling `test_tidy_r_names(" REGION NAME ")` and
-`test_tidy_r_vars(" REGION NAME ")`, respectively.
-
 Messy strings such as " DEPTO. .REF\_ID\_ " are converted to
-“depto\_ref\_id” and “DEPTO. .REF\_ID\_”, respectively.
+“depto\_ref\_id” or “DEPTO. .REF\_ID\_”.
 
 The following tests in R should give an idea of how the functions work:
 
