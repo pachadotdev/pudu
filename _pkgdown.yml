@@ -1,5 +1,5 @@
 template:
   bootstrap: 5
 
-url: ../capybara/
+url: ../pudu/
 destination: docs
