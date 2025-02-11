@@ -1,14 +1,14 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>/404.html</loc></url>
-<url><loc>/CODE_OF_CONDUCT.html</loc></url>
-<url><loc>/CONTRIBUTING.html</loc></url>
-<url><loc>/LICENSE.html</loc></url>
-<url><loc>/SUPPORT.html</loc></url>
-<url><loc>/authors.html</loc></url>
-<url><loc>/index.html</loc></url>
-<url><loc>/news/index.html</loc></url>
-<url><loc>/reference/cpp_vendor.html</loc></url>
-<url><loc>/reference/index.html</loc></url>
-<url><loc>/reference/pudu-package.html</loc></url>
+<url><loc>../capybara/404.html</loc></url>
+<url><loc>../capybara/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>../capybara/CONTRIBUTING.html</loc></url>
+<url><loc>../capybara/LICENSE.html</loc></url>
+<url><loc>../capybara/SUPPORT.html</loc></url>
+<url><loc>../capybara/authors.html</loc></url>
+<url><loc>../capybara/index.html</loc></url>
+<url><loc>../capybara/news/index.html</loc></url>
+<url><loc>../capybara/reference/cpp_vendor.html</loc></url>
+<url><loc>../capybara/reference/index.html</loc></url>
+<url><loc>../capybara/reference/pudu-package.html</loc></url>
 </urlset>
 
